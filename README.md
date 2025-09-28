@@ -1,13 +1,12 @@
-# Install gradio (run once in Colab)
+
 
 
 import gradio as gr
 
 def calculate_tax_new_regime(salary, pf, gratuity, medical, other_income, manual_deductions, apply_cess):
-    """Calculate tax using simplified Indian NEW tax regime slabs.
-    All inputs accepted in rupees. manual_deductions is a number user enters."""
+   
 
-    # --- Defensive conversions: ensure numbers (treat None/empty as 0)
+    
     try:
         salary = float(salary or 0)
         pf = float(pf or 0)
@@ -53,7 +52,7 @@ def calculate_tax_new_regime(salary, pf, gratuity, medical, other_income, manual
     )
     return out
 
-# --- Gradio UI -----------------------------------------------------------
+
 with gr.Blocks() as demo:
     gr.Markdown("# Income Tax Calculator — New Regime (Simple)")
 
